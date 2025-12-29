@@ -1,0 +1,14 @@
+# Variables de entorno
+.env
+
+# Datos locales (NO subir a GitHub)
+data/
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
