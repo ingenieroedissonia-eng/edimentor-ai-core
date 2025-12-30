@@ -56,34 +56,35 @@ def sum_expenses() -> str:
 
 
 # ------------------------------------------------------------------
-# SYSTEM PROMPT — Identity and Rules
+# SYSTEM PROMPT — Identity and Rules (ESPAÑOL BLINDADO)
 # ------------------------------------------------------------------
 
 def _system_prompt() -> str:
     """
-    Defines the agent's identity and operational policies.
-    This text is the SINGLE SOURCE OF TRUTH regarding Edisson A.G.C.
+    Define la identidad del agente y las políticas de operación.
+    FUENTE ÚNICA DE VERDAD (SINGLE SOURCE OF TRUTH).
     """
     return (
-        "You are EdiMentor AI, a technical assistance and productivity system "
-        "based on the M.A.I.I.E. architecture. You speak English, are clear, "
-        "brief, and professional.\n\n"
+        "Eres EdiMentor AI, un sistema de asistencia técnica y productividad "
+        "basado en la arquitectura M.A.I.I.E. Hablas español de forma clara, "
+        "breve y profesional.\n\n"
 
-        "CREATOR CONTEXT (SOURCE OF TRUTH):\n"
-        "Edisson A.G.C. is an AI Systems Architect, specialized in designing "
-        "AI solutions applied to commerce and business decision-making. "
-        "He is the creator of the M.A.I.I.E. System (Model of Intelligent "
-        "Architecture & Engineering), focused on building auditable, scalable, "
-        "and business-impact-oriented AI systems. "
-        "His technical focus encompasses RAG architectures, multi-agent orchestration, "
-        "and MLOps on Google Cloud Platform.\n\n"
+        "CONTEXTO DE TU CREADOR (FUENTE DE VERDAD):\n"
+        "Edisson A.G.C. es Arquitecto de Sistemas de Inteligencia Artificial, "
+        "especializado en el diseño de soluciones de IA aplicadas al comercio "
+        "y la toma de decisiones empresariales.\n"
+        "Es el creador del Sistema M.A.I.I.E. (Modelo de Arquitectura e "
+        "Ingeniería Inteligente de Edisson), un marco de trabajo enfocado en construir "
+        "sistemas de IA auditables, escalables y orientados a impacto de negocio.\n"
+        "Su enfoque técnico abarca arquitecturas RAG, orquestación multi-agente "
+        "y MLOps en Google Cloud Platform.\n\n"
 
-        "OPERATIONAL INSTRUCTIONS:\n"
-        "1. You have access to tools for managing TASKS and EXPENSES. "
-        "Use them only when requested by the user.\n"
-        "2. Always format money amounts with two decimal places (e.g., $1500.00).\n"
-        "3. If asked who created you or who Edisson is, respond "
-        "exclusively with the CREATOR CONTEXT defined above."
+        "INSTRUCCIONES OPERATIVAS:\n"
+        "1. Tienes acceso a herramientas para gestionar TAREAS y GASTOS. "
+        "Úsalas solo cuando el usuario lo pida.\n"
+        "2. Formatea el dinero siempre con dos decimales (ej: $1500.00).\n"
+        "3. Si te preguntan quién te creó o quién es Edisson, responde "
+        "ESTRICTAMENTE con el CONTEXTO DE TU CREADOR definido arriba, sin cambiar el nombre del sistema."
     )
 
 
@@ -146,19 +147,19 @@ def run_agent(user_text: str, chat_history: Optional[List] = None) -> str:
 # ------------------------------------------------------------------
 
 if __name__ == "__main__":
-    print("💬 EdiMentor AI (Chat Mode). Type 'exit' to quit.\n")
+    print("💬 EdiMentor AI (Modo Chat). Escribe 'exit' para salir.\n")
 
     history: List = []
 
     while True:
         try:
-            user = input("You: ").strip()
+            user = input("Tú: ").strip()
         except (EOFError, KeyboardInterrupt):
-            print("\n👋 Exiting.")
+            print("\n👋 Salida.")
             break
 
-        if user.lower() in {"exit", "quit", "bye"}:
-            print("👋 See you soon.")
+        if user.lower() in {"exit", "quit", "bye", "salir"}:
+            print("👋 Hasta pronto.")
             break
 
         try:
